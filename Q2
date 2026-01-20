@@ -1,0 +1,63 @@
+class Vehicle {
+    String brand;
+    int wheels;
+    String model;
+    String fuel;
+
+    Vehicle(String brand, String model, String fuel, int wheels) {
+        this.brand = brand;
+        this.model = model;
+        this.fuel = fuel;
+        this.wheels = wheels;
+    }
+
+    void max() {
+        System.out.println("Vehicle max speed not defined");
+    }
+}
+
+class Car extends Vehicle {
+
+    Car(String brand, String model, String fuel, int wheels) {
+        super(brand, model, fuel, wheels);
+    }
+
+    void max() {
+        System.out.println("Car max speed: 180 km/h");
+    }
+}
+
+class Bicycle extends Vehicle {
+
+    Bicycle(String brand, String model) {
+        super(brand, model, "None", 2);
+    }
+
+    void max() {
+        System.out.println("Bicycle max speed: 25 km/h");
+    }
+}
+
+class Scooter extends Vehicle {
+
+    Scooter(String brand, String model, String fuel) {
+        super(brand, model, fuel, 2);
+    }
+
+    void max() {
+        System.out.println("Scooter max speed: 90 km/h");
+    }
+}
+
+public class Q2 {
+    public static void main(String[] args) {
+
+        Car c = new Car("Honda", "City", "Petrol", 4);
+        Bicycle b = new Bicycle("Hero",  "ShakaLaka");
+        Scooter s = new Scooter("Bajaj", "Chetak", "Petrol");
+
+        c.max();
+        b.max();
+        s.max();
+    }
+}
