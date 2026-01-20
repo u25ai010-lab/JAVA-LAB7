@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Q1 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        double principal, rate, years, interest, balance;
+        int months;
+
+        
+        System.out.print("Enter principal amount: ");
+        principal = scanner.nextDouble();
+
+        System.out.print("Enter annual interest rate: ");
+        rate = scanner.nextDouble();
+
+        System.out.print("Enter number of months: ");
+        months = scanner.nextInt();
+        
+        years = months / 12.0;
+        
+        interest = principal * (rate / 100) * years;
+        balance = principal + interest;
+        
+        System.out.println("Balance after " + months + " months = " + balance);
+
+        scanner.close();
+    }
+}
+
