@@ -1,0 +1,52 @@
+class Teacher {
+    String name;
+    int age;
+    String department;
+
+    Teacher(String name, int age, String department) {
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+
+    void display()
+    {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Department: " + department);
+    }
+}
+class Student extends Teacher {
+    int rollNumber;
+    String course;
+
+    Student(String name, int age, String department,
+            int rollNumber, String course) {
+
+        super(name, age, department);   // reuse Teacher code
+        this.rollNumber = rollNumber;
+        this.course = course;
+    }
+
+    void displayStudent() {
+        display();   // inherited method
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Course: " + course);
+    }
+}
+
+
+public class Q4 {
+    public static void main(String[] args) {
+
+        Student s = new Student(
+                "Bholu",
+                19,
+                "Artificial Intelligence",
+                13,
+                "B.Tech"
+        );
+
+        s.displayStudent();
+    }
+}
